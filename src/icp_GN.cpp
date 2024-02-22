@@ -89,7 +89,7 @@ namespace my_icp_base_namespace
         // f(x)误差函数就是两个向量的差
         Eigen::Matrix<double, 3, 1> f_x = p_src_T - q;
         // hat: convert rotation vector to skewed matrix
-        J.block<3, 3>(0, 0) = R * Sophus::SO3::hat(p_src);
+        J.block<3, 3>(0, 0) = -R * Sophus::SO3::hat(p_src);
         // 右侧为平移
         J.block<3, 3>(0, 3) = Eigen::Matrix3d::Identity();
         Eigen::Matrix<double, 6, 6> H = J.transpose() * J;
