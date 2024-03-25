@@ -6,8 +6,10 @@ source code: https://github.com/suyunzzz/Iterative-Closest-Point-ICP-
 
 2、实现基于GN的icp，见`src/icp_GN.cpp`
 
-
 ![icp路径显示](show/icp实现.png)
+
+## 简介
+由于激光点是对实际环境中曲面的离散采样，所以相邻两帧激光点云数据中的点不可能表示的是空间中相同的位置。所以用点到点的距离作为误差方程势必会引入随机误差。
 
 ## 参考
 
