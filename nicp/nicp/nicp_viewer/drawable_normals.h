@@ -6,54 +6,61 @@
 
 using namespace nicp;
 
-namespace nicp_viewer {
+namespace nicp_viewer
+{
 
-  class DrawableNormals : public Drawable {
-  public:
-    EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
+class DrawableNormals : public Drawable
+{
+ public:
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
 
-    DrawableNormals();
-    DrawableNormals(const Eigen::Isometry3f &transformation_, GLParameter *parameter_, PointVector *points_, NormalVector *normals_);
-    virtual ~DrawableNormals() { glDeleteLists(_normalDrawList, 1); }
+  DrawableNormals();
+  DrawableNormals(const Eigen::Isometry3f &transformation_, GLParameter *parameter_, PointVector *points_, NormalVector *normals_);
+  virtual ~DrawableNormals() { glDeleteLists(_normalDrawList, 1); }
 
-    virtual GLParameter* parameter() { return _parameter; };
-    virtual bool setParameter(GLParameter *parameter_);
+  virtual GLParameter *parameter() { return _parameter; };
+  virtual bool setParameter(GLParameter *parameter_);
 
-    virtual PointVector* points() { return _points; }
-    virtual void setPoints(PointVector *points_) { 
-      _points = points_; 
-      updateNormalDrawList();
-    }
+  virtual PointVector *points() { return _points; }
+  virtual void setPoints(PointVector *points_)
+  {
+    _points = points_;
+    updateNormalDrawList();
+  }
 
-    virtual NormalVector* normals() { return _normals; }    
-    virtual void setNormals(NormalVector *normals_) { 
-      _normals = normals_; 
-      updateNormalDrawList();
-    }
+  virtual NormalVector *normals() { return _normals; }
+  virtual void setNormals(NormalVector *normals_)
+  {
+    _normals = normals_;
+    updateNormalDrawList();
+  }
 
-    void setStep(int step_) {
-      _parameter->setStep(step_);
-      updateNormalDrawList();
-    }
-    void setNormalLength(float normalLength_) {
-      _parameter->setNormalLength(normalLength_);
-      updateNormalDrawList();
-    }
-    void setNormalWidth(float lineWidth_) {
-      _parameter->setLineWidth(lineWidth_);
-      updateNormalDrawList();
-    }
+  void setStep(int step_)
+  {
+    _parameter->setStep(step_);
+    updateNormalDrawList();
+  }
+  void setNormalLength(float normalLength_)
+  {
+    _parameter->setNormalLength(normalLength_);
+    updateNormalDrawList();
+  }
+  void setNormalWidth(float lineWidth_)
+  {
+    _parameter->setLineWidth(lineWidth_);
+    updateNormalDrawList();
+  }
 
-    inline GLuint normalDrawList() { return _normalDrawList; }
+  inline GLuint normalDrawList() { return _normalDrawList; }
 
-    virtual void draw();
-    void updateNormalDrawList();
+  virtual void draw();
+  void updateNormalDrawList();
 
-  protected:
-    GLParameterNormals *_parameter;
-    PointVector *_points;
-    NormalVector *_normals;
-    GLuint _normalDrawList; 
-  };  
+ protected:
+  GLParameterNormals *_parameter;
+  PointVector *_points;
+  NormalVector *_normals;
+  GLuint _normalDrawList;
+};
 
-}
+} // namespace nicp_viewer

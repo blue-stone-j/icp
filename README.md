@@ -1,10 +1,5 @@
 ### introduction
 
-### TODO
-1. Make sure code can run on ubuntu 22.04.
-2. Find essential dependencies.
-3. Better to make a docker image.(It's much more diffcult today, because all docker repositories are blocked in China.)
-
 ### ICP
 Simple and traditional ICP implementation.
 

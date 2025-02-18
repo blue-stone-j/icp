@@ -55,8 +55,8 @@ Branches
 
 - master : current stable branch
 - develop: current development branch
-- iros2015_experiments: code snapshot used for IROS 2015 paper publication [[pdf](http://jacoposerafin.com/wp-content/uploads/serafin15iros.pdf)]
-- ras2016_experiments: code snapshot used for RAS 2017 paper publication [[pdf](http://jacoposerafin.com/wp-content/uploads/serafin17ras.pdf)]
+- iros2015_experiments: code snapshot used for IROS 2015 paper publication [[2015 NICP Dense Normal Based Point Cloud Registration](http://jacoposerafin.com/wp-content/uploads/serafin15iros.pdf)]
+- ras2016_experiments: code snapshot used for RAS 2017 paper publication [[2017 Using Extended Measurements and Scene Merging for Efficient and Robust Point Cloud Registration](http://jacoposerafin.com/wp-content/uploads/serafin17ras.pdf)]
 
 Examples
 ----
